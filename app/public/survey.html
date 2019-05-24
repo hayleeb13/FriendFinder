@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder Survey</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+      <h1>Survey Questions</h1>
+      <hr>
+      <h2><strong>About You</strong></h2>
+      <h3>Name (Required)</h3>
+      <input type="text" id="name" class="form-control" required>
+      <h3>Link to Photo Image (Required)</h3>
+      <input type="text" id="photo" class="form-control" required>
+      <hr>
+
+      <h3>Question 1</h3>
+      <h4>Your mind is always looking towards the future.</h4>
+      <select class="chosen-select" id="q1" style="display: block;">
+      <option value>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+      </select>
+      <br>
+      <h3>Question 2</h3>
+      <h4>You enjoy socializing.</h4>
+      <select class="chosen-select" id="q2" style="display: block;">
+      <option value>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+      </select>
+      <br>
+      <h3>Question 3</h3>
+      <h4>You are a peacekeeper.</h4>
+      <select class="chosen-select" id="q3" style="display: block;">
+      <option value>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+      </select>
+      <br>
+      <h3>Question 4</h3>
+      <h4>You would rather explore than stay at home.</h4>
+      <select class="chosen-select" id="q4" style="display: block;">
+      <option value>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+      </select>
+      <br>
+      <h3>Question 5</h3>
+      <h4>You have a hard time relating to others.</h4>
+      <select class="chosen-select" id="q5" style="display: block;">
+      <option value>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+      </select>
+      <br>
+      <h3>Question 6</h3>
+      <h4>People get on your nerves easily.</h4>
+      <select class="chosen-select" id="q6" style="display: block;">
+      <option value>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+      </select>
+      <br>
+      <h3>Question 7</h3>
+      <h4>You value friendship more than anything else.</h4>
+      <select class="chosen-select" id="q7" style="display: block;">
+      <option value>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+      </select>
+      <br>
+      <h3>Question 8</h3>
+      <h4>Spending time with people makes you feel energetic.</h4>
+      <select class="chosen-select" id="q8" style="display: block;">
+      <option value>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+      </select>
+      <br>
+      <h3>Question 9</h3>
+      <h4>Feelings are more important than the truth.</h4>
+      <select class="chosen-select" id="q9" style="display: block;">
+      <option value>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+      </select>
+      <br>
+      <h3>Question 10</h3>
+      <h4>You do things out of sheer curiousity.</h4>
+      <select class="chosen-select" id="q10" style="display: block;">
+      <option value>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+      </select>
+
+  <br>
+  <button type="submit" class="btn btn-primary btn-block" id="submit">Submit</button>
+  <hr>
+
+  <footer class="footer">
+    <div class="container">
+      <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/hayleeb13/FriendFinder">GitHub Repo</a>
+    </div>
+  </footer>
+
+  </div>
+
+<script type="text/javascript">
+
+  $("#submit").on("click", function(event) {
+    event.preventDefault();
+
+    var userData = {
+      name: $("#name").val(),
+      photo: $("#photo").val(),
+      scores: [
+        $("#q1").val(),
+        $("#q2").val(),
+        $("#q3").val(),
+        $("#q4").val(),
+        $("#q5").val(),
+        $("#q6").val(),
+        $("#q7").val(),
+        $("#q8").val(),
+        $("#q9").val(),
+        $("#q10").val(),
+      ]
+    };
+
+    $.post("/api/friends", userData, function(data) {
+        $("#friend-match-name").text(data.name);
+        $("#friend-match-photo").attr("src", data.photo);
+        $("#best-match").modal("toggle");
+      });
+  });
+
+</script>
+</body>
+
+</html>
