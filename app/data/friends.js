@@ -80,3 +80,5 @@ var scoreArray = [
     ]
   }
 ];
+
+module.exports = scoreArray;

@@ -136,7 +136,7 @@
       </select>
 
   <br>
-  <button type="submit" class="btn btn-primary btn-block" id="submit">Submit</button>
+  <button type="submit" class="btn btn-primary btn-block">Submit</button>
   <hr>
 
   <footer class="footer">
@@ -149,7 +149,7 @@
 
 <script type="text/javascript">
 
-  $("#submit").on("click", function(event) {
+  $(".submit").on("click", function(event) {
     event.preventDefault();
 
     var userData = {
@@ -168,6 +168,8 @@
         $("#q10").val(),
       ]
     };
+
+    console.log(userData);
 
     $.post("/api/friends", userData, function(data) {
         $("#friend-match-name").text(data.name);

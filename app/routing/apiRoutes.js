@@ -8,6 +8,7 @@ module.exports = function(app) {
   app.post("/api/friends", function(req, res) {
     var newFriends = req.body;
     newFriends.friends = newFriends.name.replace(/\s+/g, "").toLowerCase();
+    console.log(newFriends);
     friends.push(newFriends);
     res.json(newFriends);
   });
