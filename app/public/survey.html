@@ -192,11 +192,18 @@
       ]
     };
 
-    $.post("/api/friends", userData, function(data) {
-      $("#name").text(data.name);
-      $("#photo").attr("src", data.photo);
-      $("#modal-body").modal("toggle");
-    })
+    $.ajax({
+      url: "/api/friends",
+      method: "POST",
+      data: userData,
+      dataType: "text"
+    }).then(function (res) {
+      var match = $("<p>").text(res.name);
+      var image = $("<img>").attr("src", res.image);
+      $("#name").append(match);
+      $("#photo").append(image);
+      $(".modal-body").show();
+    });
   });
 
 </script>
