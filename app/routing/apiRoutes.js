@@ -7,41 +7,37 @@ module.exports = function(app) {
 
   app.post("/api/friends", function(req, res) {
     var newFriends = req.body;
-    var newName = newFriends.name;
-    var newScores = newFriends.scores;
-    var differenceArray = [];
-
+    newFriends.friends = newFriends.name.replace(/\s+/g, "").toLowerCase();
+    var userScores = newFriends.scores;
+    var difference = 0;
+    var diffArray = [];
     for (var i = 0; i < friends.length; i++) {
-      var difference = 0;
-      var differenceObject = {
+      var diffObject = {
         name: "",
         image: "",
         difference: 0
       };
-      for (var j = 0; j < newScores.length; j++){
-        difference = Math.abs(parseInt(friends[i].scores[j]) - parseInt(newScores[j]));
-        differenceObject.difference += difference;
-        differenceObject.name = friends[i].name;
-        differenceObject.image = friends[i].photo;
-        newScores[j] = parseInt(newScores[j]);
-      };
-      differenceArray.push({
-        name: differenceObject.name,
-        image: differenceObject.image,
-        difference: differenceObject.difference
+      for (var j = 0; j < userScores.length; j++) {
+        difference = Math.abs(parseInt(friends[i].scores[j]) - parseInt(userScores[j]));
+        diffObject.difference += difference;
+        diffObject.name = friends[i].name;
+        diffObject.image = friends[i].photo;
+        userScores[j] = parseInt(userScores[j]);
+      }
+      diffArray.push({
+        name: diffObject.name,
+        image: diffObject.image,
+        difference: diffObject.difference
       });
-      req.body.scores = newScores;
+      req.body.scores = userScores;
     }
-    differenceArray.sort(function (a, b) {
-      return a.difference - b.difference
+    diffArray.sort(function (person1, person2) {
+      return person1.difference - person2.difference;
     });
-    match = differenceArray[0];
-    matchedName = match.name;
+    match = diffArray[0];
+    matchedFriend = match.name;
     matchedImage = match.image;
-    friends.push(newFriends);
-    newFriends.friends = newFriends.name.replace(/\s+/g, "").toLowerCase();
-    console.log(newFriends);
-    friends.push(newFriends);
-    res.json(newFriends);
+
+    friends.push(userInput);
   });
 };
