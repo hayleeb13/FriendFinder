@@ -2,7 +2,7 @@ var friends = require("../data/friends.js");
 
 module.exports = function(app) {
   app.get("/api/friends", function(req, res) {
-    return res.json(friends);
+    res.json(friends);
   });
 
   app.post("/api/friends", function(req, res) {
@@ -18,12 +18,15 @@ module.exports = function(app) {
         difference: 0
       };
       for (var j = 0; j < userScores.length; j++) {
-        difference = Math.abs(parseInt(friends[i].scores[j]) - parseInt(userScores[j]));
+        difference = Math.abs(
+          parseInt(friends[i].scores[j]) - parseInt(userScores[j])
+        );
         diffObject.difference += difference;
         diffObject.name = friends[i].name;
         diffObject.image = friends[i].photo;
         userScores[j] = parseInt(userScores[j]);
       }
+
       diffArray.push({
         name: diffObject.name,
         image: diffObject.image,
@@ -31,7 +34,7 @@ module.exports = function(app) {
       });
       req.body.scores = userScores;
     }
-    diffArray.sort(function (person1, person2) {
+    diffArray.sort(function(person1, person2) {
       return person1.difference - person2.difference;
     });
     match = diffArray[0];
@@ -39,5 +42,6 @@ module.exports = function(app) {
     matchedImage = match.image;
 
     friends.push(userInput);
+    res.json(match);
   });
 };

@@ -8,4 +8,5 @@
 * Any questions or issues regarding this program can be directed to Haylee Bell email hayleeb13@gmail.com.
 * Note: at this point the app does not work correctly, I believe there is an issue with my apiRoute.js file. Still working on a solution.
 
-* Links to heroku app of working code:
+* Links to heroku app:
+https://hbell-friendfinder.herokuapp.com/
