@@ -39,5 +39,8 @@ module.exports = function(app) {
     matchedImage = match.image;
 
     friends.push(userInput);
+    console.log(userScores);
+    console.log(match);
+    console.log(difference);
   });
 };
