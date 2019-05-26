@@ -1,4 +1,4 @@
-var friends = require("../data/friends");
+var friends = require("../data/friends.js");
 
 module.exports = function(app) {
   app.get("/api/friends", function(req, res) {
@@ -39,8 +39,5 @@ module.exports = function(app) {
     matchedImage = match.image;
 
     friends.push(userInput);
-    console.log(userScores);
-    console.log(match);
-    console.log(difference);
   });
 };
