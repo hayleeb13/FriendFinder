@@ -1,4 +1,4 @@
-var scoreArray = [
+var friends = [
   {
     name: "Barry Allen",
     photo: "https://i.pinimg.com/originals/f4/f0/29/f4f029b0d048a710757cf2fa41c204df.jpg",
@@ -81,4 +81,4 @@ var scoreArray = [
   }
 ];
 
-module.exports = scoreArray;
+module.exports = friends;

@@ -6,42 +6,29 @@ module.exports = function(app) {
   });
 
   app.post("/api/friends", function(req, res) {
-    var newFriends = req.body;
-    newFriends.friends = newFriends.name.replace(/\s+/g, "").toLowerCase();
-    var userScores = newFriends.scores;
-    var difference = 0;
-    var diffArray = [];
-    for (var i = 0; i < friends.length; i++) {
-      var diffObject = {
-        name: "",
-        image: "",
-        difference: 0
-      };
-      for (var j = 0; j < userScores.length; j++) {
-        difference = Math.abs(
-          parseInt(friends[i].scores[j]) - parseInt(userScores[j])
-        );
-        diffObject.difference += difference;
-        diffObject.name = friends[i].name;
-        diffObject.image = friends[i].photo;
-        userScores[j] = parseInt(userScores[j]);
+    var userData = req.body;
+    var userScores = userData.scores;
+    var totalDiff = 0;
+    
+    var match = {
+      name: "",
+      photo: "",
+      difference: 100
+    };
+
+    for (var i = 0; i < friends.length(); i++) {
+      for (var j = 0; j < 10; j++) {
+        totalDiff += Math.abs(parseInt(userScores[j]) - parseInt(friends[i]).scores[j]);
+        if (totalDiff <= match.difference) {
+          match.name = friends[i].name;
+          match.photo = friends[i].photo;
+          match.difference = friends[i].totalDiff;
+        }
       }
-
-      diffArray.push({
-        name: diffObject.name,
-        image: diffObject.image,
-        difference: diffObject.difference
-      });
-      req.body.scores = userScores;
     }
-    diffArray.sort(function(person1, person2) {
-      return person1.difference - person2.difference;
-    });
-    match = diffArray[0];
-    matchedFriend = match.name;
-    matchedImage = match.image;
 
-    friends.push(userInput);
+    friends.push(userData);
     res.json(match);
+
   });
 };
