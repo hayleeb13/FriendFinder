@@ -1,4 +1,4 @@
-var friends = require("../data/friends.js");
+var friends = require("../data/friends");
 
 module.exports = function(app) {
   app.get("/api/friends", function(req, res) {
@@ -16,9 +16,9 @@ module.exports = function(app) {
       difference: 100
     };
 
-    for (var i = 0; i < friends.length(); i++) {
+    for (var i = 0; i < friends.length; i++) {
       for (var j = 0; j < 10; j++) {
-        totalDiff += Math.abs(parseInt(userScores[j]) - parseInt(friends[i]).scores[j]);
+        totalDiff += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
         if (totalDiff <= match.difference) {
           match.name = friends[i].name;
           match.photo = friends[i].photo;
