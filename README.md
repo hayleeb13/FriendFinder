@@ -6,7 +6,6 @@
 * The project is useful because it allows someone to find friends that best match their personality. 
 * Simply get started by clicking start survey and following the prompts.
 * Any questions or issues regarding this program can be directed to Haylee Bell email hayleeb13@gmail.com.
-* Note: at this point the app does not work correctly, I believe there is an issue with my apiRoute.js file. Still working on a solution.
 
 * Links to heroku app:
 https://hbell-friendfinder.herokuapp.com/
